@@ -1,22 +1,29 @@
-# Troubleshooting Documentation
+ # TROUBLESHOOTING DOCUMENTATION
 
-## SSH Connection Issues
+## Introduction
 
-### Problem
+During the implementation of the cloud server project, several technical issues were encountered and resolved.
+
+This document explains the troubleshooting steps used throughout the project.
+
+---
+
+# SSH Connection Issues
+
+## Problem
+
 The server initially failed to connect through SSH.
 
-### Cause
-Incorrect IP address and firewall configuration.
+## Solution
 
-### Solution
+The following checks were performed:
 
-The following were checked:
-- Correct public IP address
-- NSG inbound rules
-- SSH port 22 access
-- Correct username
+- Verified the correct public IP address
+- Confirmed SSH port 22 was enabled in Azure Network Security Group
+- Confirmed the virtual machine was running
+- Verified the correct username was used
 
-SSH connection command used:
+Example SSH command:
 
 ```bash
 ssh azureuser@20.5.139.113
@@ -24,102 +31,86 @@ ssh azureuser@20.5.139.113
 
 ---
 
-## NGINX Service Issues
+# NGINX Not Displaying Website
 
-### Problem
-The website did not load correctly after installation.
+## Problem
 
-### Cause
-NGINX service was not running.
+The website changes did not appear after editing the HTML file.
 
-### Solution
+## Solution
 
-The following commands were used:
+NGINX was restarted using:
 
 ```bash
-sudo systemctl start nginx
-sudo systemctl enable nginx
-sudo systemctl status nginx
+sudo systemctl restart nginx
+```
+
+Browser cache was also refreshed using:
+
+```text
+CTRL + F5
 ```
 
 ---
 
-## DNS Propagation Delay
+# DNS Propagation Delay
 
-### Problem
+## Problem
+
 The domain name did not immediately connect to the server.
 
-### Cause
-DNS propagation delay after configuring A records.
+## Solution
 
-### Solution
+Time was allowed for DNS propagation after configuring the A records.
 
-Waited for DNS propagation and verified DNS settings through the domain registrar panel.
-
----
-
-## SSL Certificate Errors
-
-### Problem
-HTTPS initially failed during SSL setup.
-
-### Cause
-DNS records were not fully propagated before running Certbot.
-
-### Solution
-
-SSL was reconfigured using:
+The DNS configuration was verified using:
 
 ```bash
-sudo certbot --nginx -d bettyzen.online -d www.bettyzen.online
+ping bettyzen.online
+```
+
+and
+
+```bash
+nslookup bettyzen.online
 ```
 
 ---
 
-## Permission Errors
+# Permission Issues
 
-### Problem
-Scripts could not execute properly.
+## Problem
 
-### Cause
-Execute permissions were missing.
+Permission denied errors occurred while editing website files.
 
-### Solution
+## Solution
+
+Administrative privileges were used with sudo:
 
 ```bash
-chmod +x testscript
+sudo nano /var/www/html/index.html
 ```
 
 ---
 
-## Cron Job Issues
+# SSL Certificate Issues
 
-### Problem
-The backup script did not execute automatically.
+## Problem
 
-### Cause
-Incorrect cron formatting and file path configuration.
+HTTPS was not initially enabled.
 
-### Solution
+## Solution
 
-The crontab file was corrected using:
+Certbot and Let's Encrypt were installed and configured:
 
 ```bash
-sudo nano /etc/crontab
+sudo certbot --nginx
 ```
 
-Correct cron configuration:
-
-```bash
-0 * * * * ubuntu /usr/bin/testscript
-```
+The NGINX configuration was automatically updated to support HTTPS.
 
 ---
 
-## Lessons Learned
+# Conclusion
 
-- Importance of proper DNS configuration
-- Importance of Linux permissions
-- Importance of automation using cron jobs
-- Importance of server troubleshooting skills
-- Importance of documentation during deployment
+The troubleshooting process helped improve understanding of Linux server administration, cloud deployment, DNS configuration and web server management.
