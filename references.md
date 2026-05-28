@@ -1,82 +1,53 @@
-# References
+# REFERENCES
 
-The following resources, guides, and platforms were used during the development of the cloud server project.
+## Microsoft Azure Documentation
 
----
+Microsoft. (2026). *Microsoft Azure Documentation*. Retrieved from:
 
-## Microsoft Azure
-
-Microsoft Azure Documentation  
 https://learn.microsoft.com/en-us/azure/
-
-Azure Virtual Machine Documentation  
-https://learn.microsoft.com/en-us/azure/virtual-machines/
-
----
-
-## Ubuntu Linux
-
-Ubuntu Server Documentation  
-https://ubuntu.com/server/docs
-
-APT Package Management  
-https://help.ubuntu.com/
 
 ---
 
 ## NGINX Documentation
 
-NGINX Official Documentation  
+NGINX. (2026). *NGINX Official Documentation*. Retrieved from:
+
 https://nginx.org/en/docs/
 
 ---
 
-## Certbot and SSL/TLS
+## Certbot Documentation
 
-Certbot Documentation  
+Electronic Frontier Foundation. (2026). *Certbot Instructions*. Retrieved from:
+
 https://certbot.eff.org/
 
-Let's Encrypt  
-https://letsencrypt.org/
+---
+
+## Ubuntu Linux Documentation
+
+Ubuntu. (2026). *Ubuntu Server Documentation*. Retrieved from:
+
+https://ubuntu.com/server/docs
 
 ---
 
 ## GitHub Documentation
 
-GitHub Markdown Guide  
-https://docs.github.com/en/get-started/writing-on-github
+GitHub. (2026). *GitHub Docs*. Retrieved from:
 
-GitHub Documentation  
 https://docs.github.com/
 
 ---
 
-## Linux Bash Scripting
+## Murdoch University ICT171 Resources
 
-Linux Bash Scripting Tutorial  
-https://linuxconfig.org/bash-scripting-tutorial-for-beginners
-
-Cron Job Documentation  
-https://man7.org/linux/man-pages/man5/crontab.5.html
+Murdoch University. (2026). *ICT171 Introduction to Server Environments and Architectures Learning Materials*.
 
 ---
 
-## Domain and DNS Configuration
+## Let's Encrypt
 
-Cloudflare DNS Documentation  
-https://developers.cloudflare.com/dns/
+Internet Security Research Group. (2026). *Let’s Encrypt Documentation*. Retrieved from:
 
----
-
-## Assignment and Lab Resources
-
-Murdoch University ICT171 Labs and Learning Materials
-
-Cloud Server Project Brief  
-ICT171 Assignment 3 – Cloud Server Project & Video Explainer
-
----
-
-## Referencing Note
-
-Any scripts, commands, or configuration methods adapted from online resources were modified and documented as part of this project implementation.
+https://letsencrypt.org/docs/
