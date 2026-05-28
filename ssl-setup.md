@@ -1,16 +1,36 @@
-# SSL/TLS Configuration Documentation
+# SSL/TLS CONFIGURATION DOCUMENTATION
 
-## SSL/TLS Overview
+## Introduction
 
-SSL/TLS was configured to secure communication between users and the web server.
+SSL/TLS was configured to secure the website connection and enable HTTPS encryption.
 
-HTTPS encryption was implemented to improve website security and protect data transmitted between the client browser and the server.
+SSL helps protect communication between the web server and users by encrypting transmitted data.
+
+The website domain used was:
+
+```text
+bettyzen.online
+```
 
 ---
 
-## Installing Certbot
+# Purpose of SSL/TLS
 
-The following commands were used to install Certbot and the NGINX SSL plugin.
+SSL/TLS provides:
+
+- Secure encrypted communication
+- Improved website security
+- HTTPS browser support
+- User trust and authentication
+- Protection against data interception
+
+---
+
+# Installing Certbot
+
+Certbot was installed to generate and manage SSL certificates from Let's Encrypt.
+
+The following commands were used:
 
 ```bash
 sudo apt update
@@ -19,41 +39,57 @@ sudo apt install certbot python3-certbot-nginx -y
 
 ---
 
-## Generating the SSL Certificate
+# Generating SSL Certificate
 
-The following command was used to automatically configure SSL for the website domain.
+The SSL certificate was generated using:
 
 ```bash
-sudo certbot --nginx -d bettyzen.online -d www.bettyzen.online
+sudo certbot --nginx
 ```
+
+During the setup process:
+
+- The domain name was selected
+- HTTPS redirection was enabled
+- The certificate was automatically configured within NGINX
 
 ---
 
-## SSL Verification
+# HTTPS Verification
 
-The SSL certificate was successfully installed and HTTPS was enabled.
-
-The website could then be securely accessed using:
+After SSL configuration, the website became accessible securely using:
 
 ```text
 https://www.bettyzen.online
 ```
 
+The browser displayed a secure padlock icon confirming successful SSL configuration.
+
 ---
+
+# Testing SSL Configuration
+
+The following checks were performed:
+
+## Browser Verification
+
+The website loaded successfully using HTTPS.
+
+## Certificate Verification
+
+The SSL certificate was verified through the browser certificate information.
+
+## Automatic HTTPS Redirection
+
+HTTP traffic was redirected automatically to HTTPS.
+
 ---
 
-## Certificate Registration Email
+# Auto Renewal
 
-The SSL certificate registration and notifications were configured using the following email address:
+Certbot automatic renewal was enabled to maintain certificate validity.
 
-```text
-beatricewanjohi12345@gmail.com
-```
-## Automatic Certificate Renewal
-
-Certbot automatic renewal was enabled to ensure the SSL certificate renews before expiration.
-
-The following command was used to test automatic renewal:
+The following command was used to test renewal:
 
 ```bash
 sudo certbot renew --dry-run
@@ -61,9 +97,6 @@ sudo certbot renew --dry-run
 
 ---
 
-## Security Benefits of SSL/TLS
+# Conclusion
 
-- Encrypts communication between the user and server
-- Improves website trust and security
-- Prevents interception of sensitive data
-- Enables HTTPS secure browsing
+SSL/TLS was successfully configured on the Microsoft Azure Linux server using Let's Encrypt and Certbot, allowing secure HTTPS communication for the website.
