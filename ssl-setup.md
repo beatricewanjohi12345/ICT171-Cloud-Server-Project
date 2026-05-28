@@ -40,7 +40,15 @@ https://www.bettyzen.online
 ```
 
 ---
+---
 
+## Certificate Registration Email
+
+The SSL certificate registration and notifications were configured using the following email address:
+
+```text
+beatricewanjohi12345@gmail.com
+```
 ## Automatic Certificate Renewal
 
 Certbot automatic renewal was enabled to ensure the SSL certificate renews before expiration.
