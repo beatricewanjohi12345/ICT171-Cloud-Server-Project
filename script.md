@@ -1,119 +1,82 @@
-# Linux Backup Script Documentation
+# SCRIPT COMPONENT DOCUMENTATION
 
-## Script Overview
+## Introduction
 
-A Bash backup automation script was developed on the Ubuntu Linux server.
+This project includes HTML and CSS scripting used to develop and customise the website interface for the ICT171 cloud server project.
 
-The purpose of the script was to:
-- backup files from the Documents directory,
-- compress the backup into a zip archive,
-- automatically include the current date in the filename,
-- and automate execution using cron scheduling.
-
-This scripting task demonstrates Linux automation, file management, and server administration skills.
+The scripting component demonstrates basic front-end web development and server-side deployment skills.
 
 ---
 
-## Creating Test Files
+# HTML Implementation
 
-The following commands were used to create sample files and directories for testing the backup process.
+HTML was used to create the structure of the website.
 
-```bash
-touch file1
-touch file2
-touch file3
-touch file4
-touch file5
+The website contains:
 
-mkdir testfolder
-cd testfolder
+- Headers
+- Navigation bar
+- Project sections
+- Hyperlinks
+- Lists
+- Footer section
 
-touch file11
-touch file22
-touch file33
-touch file44
-touch file55
+Example HTML code used:
+
+```html
+<h1>BETTYZEN CAFÉ</h1>
 ```
 
 ---
 
-## Bash Script Code
+# CSS Styling
 
-```bash
-#!/bin/bash
+CSS was used to customise the appearance of the website.
 
-now=$(date +"%d_%m_%y")
+The styling included:
 
-cp -R /home/ubuntu/Documents/* /home/ubuntu/backup/
+- Background colours
+- Text formatting
+- Navigation styling
+- Card layouts
+- Hover effects
+- Responsive spacing
 
-zip -r $now.zip /home/ubuntu/backup/*
+Example CSS code used:
 
-cp $now.zip /home/ubuntu/
-
-scp -i /home/ubuntu/key.pem $now.zip ubuntu@20.5.139.113:/home/ubuntu/
+```css
+body {
+    background-color: #0f172a;
+    color: white;
+}
 ```
 
 ---
 
-## Script Explanation
+# NGINX Deployment
 
-The script performs the following tasks:
+The website files were deployed to the NGINX web server directory:
 
-1. Creates a variable containing the current date
-2. Copies files from the Documents directory into the backup directory
-3. Compresses the backup into a zip archive
-4. Saves the zip archive using the current date
-5. Transfers the backup file to the cloud server using SCP
+```bash
+/var/www/html
+```
+
+The website was then accessed publicly using the configured domain name.
 
 ---
 
-## Making the Script Executable
+# Purpose of the Script Component
 
-The following command was used to provide execute permissions.
+The scripting component demonstrates:
 
-```bash
-chmod +x testscript
-```
-
-The script was then executed using:
-
-```bash
-./testscript
-```
+- Website customisation
+- Front-end development
+- Linux server deployment
+- Web hosting implementation
+- Technical configuration skills
 
 ---
 
-## Cron Job Automation
+# Conclusion
 
-The cron scheduler was configured to automatically execute the script every hour.
-
-The crontab file was edited using:
-
-```bash
-sudo nano /etc/crontab
-```
-
-The following cron entry was added:
-
-```bash
-0 * * * * ubuntu /usr/bin/testscript
-```
-
----
-
-## Script Benefits
-
-- Automates server backups
-- Reduces manual administration
-- Improves disaster recovery capability
-- Demonstrates Linux scripting skills
-- Demonstrates task scheduling using cron
-
----
-
-## Verification
-
-The script execution was verified through:
-- successful zip archive creation,
-- automated backup generation,
-- and successful file transfer operations.
+The scripting component successfully supported the deployment of a customised cloud-hosted website using HTML, CSS, Linux and NGINX technologies.
