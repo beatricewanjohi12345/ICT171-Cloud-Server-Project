@@ -31,6 +31,17 @@ https://www.bettyzen.online
 https://github.com/beatricewanjohi12345/ICT171-Cloud-Server-Project
 
 ---
+## Video Explainer
+
+Video Link:
+
+https://1drv.ms/v/c/5a73ea2910a52d08/IQAJLC3JNZ7-Q5Nf7sIZ_-bXAVaiK_zJiOM4D6U7-rnvkPQ?e=mZ05qX. 
+
+
+
+
+---
+
 
 # Server Information
 
